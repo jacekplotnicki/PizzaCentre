@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <link rel="icon" type="image/png" href="images/fav.png"/>
+</head>
+<body>
+<h1>Menu!</h1>
+<a href="/home">Go back Home!</a>
+
+<div th:each="pizza: ${list}" class="card mb-3 col-6">
+    <b><div class="card-header" th:text="${pizza.pizzaName}"></div></b>
+    <div class="card-body" th:text="${pizza.pizzaDescription}"></div>
+    <div class="card-body" th:text="${pizza.pizzaPrice}"></div>
+    <div class="card-body"><img th:src="@{${'images/' + pizza.image + '.png'}}" alt="pizza"></div>
+    <center><a href="/basket">Add to the BASKET!</a></center>
+    <br/><br/><br/>
+</div>
+</body>
+</html>
