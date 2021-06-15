@@ -1,16 +1,26 @@
 <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="icon" type="image/png" href="images/fav.png"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/styles/style.css}">
 </head>
 <body>
 <center><h1><b>Basket</b></h1></center>
 <center><b>In your Basket:</b></center>
 <br/><br/>
 <center>blah<br/>blah<br/>blah<br/>blah</center>
-<center><a href="/menu">go to MENU NOW!</a></center>
+<center><a href="/menu">Shop for more!</a></center>
 <center><a href="/home">Go back Home!</a></center>
+<br/>
+<div th:each="pizza: ${list}" class="card mb-3 col-6">
+    <b><div class="card-header" th:text="${pizza.pizzaName}"></div></b>
+    <center><a href="/basket">Add to the BASKET!</a></center>
+    <br/><br/><br/>
+</div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </html>

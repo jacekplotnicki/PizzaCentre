@@ -5,18 +5,26 @@
     <meta charset="UTF-8">
     <title>Menu</title>
     <link rel="icon" type="image/png" href="images/fav.png"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/styles/style.css}">
 </head>
 <body>
+<div class="mainwrapper">
 <h1>Menu!</h1>
-<a href="/home">Go back Home!</a>
+<a href="/home" class="customlink">Go back Home! </a>
 
-<div th:each="pizza: ${list}" class="card mb-3 col-6">
+<div th:each="pizza: ${list}" class="card mb-3">
     <b><div class="card-header" th:text="${pizza.pizzaName}"></div></b>
     <div class="card-body" th:text="${pizza.pizzaDescription}"></div>
     <div class="card-body" th:text="${pizza.pizzaPrice}"></div>
     <div class="card-body"><img th:src="@{${'images/' + pizza.image + '.png'}}" alt="pizza"></div>
-    <center><a href="/basket">Add to the BASKET!</a></center>
+    <a href="/basket">Add to BASKET!</a>
+    <button class="btn btn-secondary" th:onclick="'add(' + ${pizza.id} + ');'">Add to Basket</button>
     <br/><br/><br/>
 </div>
+</div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script th:src="@{/scripts/main.js}"></script>
 </html>

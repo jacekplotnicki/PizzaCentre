@@ -1,0 +1,16 @@
+.customlink{
+color: red;
+text-decoration: none;
+}
+
+.mainwrapper{
+width: 800px;
+margin-left: auto;
+margin-right: auto;
+align-items: center;
+text-align: center;
+}
+.mainwrapper card:hover{
+background-color: coral;
+}
+
