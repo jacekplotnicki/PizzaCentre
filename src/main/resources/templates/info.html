@@ -4,17 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Petemoss&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/fav.png"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/styles/style.css}">
 </head>
 <body>
-<center><h1> INFO BOX !!!</h1>  </center>
-<center><a href="/home">Go back Home!</a></center>
-<br/><br/>
-<center><b>Hello We are Pizza Center and we sell pizza </b></center>
-<br/><br/><br/><br/>
-<center><b>U wanna sum? </b></center>
+<div class="main-container">
+    <h1> INFO BOX !!!</h1>
+    <form action="/home">
+        <button class="btn btn-primary m-2">Home</button>
+    </form>
+    <form action="/basket">
+        <button class="btn btn-primary m-2">Go to Basket</button>
+    </form>
+    <br/><br/>
+    <b>Hello We are Pizza Center and we sell pizza </b>
+    <br/><br/><br/><br/>
+    <b> Hello, Im the author, <br> This website was an Assesment for a school for the IB program. The website was made to
+        help Pizza Centre as a business giving me a self develpment opportunity to exceed the IB program standards. <br>
+        This Project involved using many programming languages to fullfil the requirements and satisfy my client :) <br>
+                                                                         -Author</b>
+</div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
 </html>

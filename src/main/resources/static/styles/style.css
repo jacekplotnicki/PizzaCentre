@@ -1,16 +1,41 @@
+
+h1{
+font-family: 'Petemoss', cursive;
+font-size: 100px;
+}
+
 .customlink{
 color: red;
 text-decoration: none;
 }
 
-.mainwrapper{
+.card{
+margin: 50px;
+}
+
+.card:hover{
+background-color: #eae4e4;
+}
+
+.card-header{
+font-family: 'Petemoss', cursive;
+font-size: 40px;
+}
+
+.card .custom-price{
+color: blue;
+}
+
+.card .basket-img{
+width: 50px;
+hight: 50px;
+margin: 10px;
+}
+
+.main-container{
 width: 800px;
 margin-left: auto;
 margin-right: auto;
 align-items: center;
 text-align: center;
 }
-.mainwrapper card:hover{
-background-color: coral;
-}
-

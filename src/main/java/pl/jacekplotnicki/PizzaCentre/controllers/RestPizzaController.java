@@ -1,4 +1,4 @@
-package pl.jacekplotnicki.PizzaCentre.controller;
+package pl.jacekplotnicki.PizzaCentre.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
