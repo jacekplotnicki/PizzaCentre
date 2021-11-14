@@ -17,7 +17,7 @@
     <h1>Basket</h1>
     <br>
     <form action="/home">
-        <button class="btn btn-primary m-2">Home</button>
+        <button class="btn btn-primary btn-lg m-2">Home</button>
     </form>
     <form action="/menu">
         <button class="btn btn-primary m-2">Go to Menu</button>
@@ -37,24 +37,24 @@
                 <div th:text="'quantity: '+${pizza.quantity}"></div>
                 <div class="custom-price" th:text="${pizza.price}+' PLN'"></div>
                 <form th:action="'/basket/remove/' + ${pizza.id}">
-                    <button class="btn btn-warning">remove</button>
+                    <button class="btn btn-warning btn-sm">remove</button>
                 </form>
             </div>
         </div>
     </div>
     <h2 th:text="${sum}+' PLN'"></h2>
     <form action="/basket/clear">
-        <button class="btn btn-primary m-2">Clear</button>
+        <button class="btn btn-outline-danger m-2">Clear</button>
     </form>
 
     <form action="/success">
-        <button class="btn btn-primary m-2">Go to Checkout</button>
+        <button class="btn btn-outline-success btn-lg m-2">Go to Checkout</button>
     </form>
 
 
     <br><br><br><br><br><br><br><br><br>
     <form action="/info">
-        <button class="btn btn-outline-info m-2">Go to the Info Box</button>
+        <button class="btn btn-outline-info btn-lg m-2">Go to the Info Box</button>
     </form>
 </div>
 </body>
