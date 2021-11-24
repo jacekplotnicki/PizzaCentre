@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.jacekplotnicki.PizzaCentre.models.Pizza;
 import pl.jacekplotnicki.PizzaCentre.models.PizzaInBasket;
 import pl.jacekplotnicki.PizzaCentre.models.PizzaRepository;
+import pl.jacekplotnicki.PizzaCentre.models.UserForm;
 
 import javax.mail.MessagingException;
 import java.util.ArrayList;
@@ -73,9 +74,9 @@ public class PizzaService {
         basket.setSum(basket.getSum().add(getPizzaById(id).getPrice()));
     }
 
-    public void sendMailOrder(){
+    public void sendMailOrder(UserForm userForm){
         try {
-            mailSerivce.sendMail("wjackowski10@gmail.com", null, null, true);
+            mailSerivce.sendMail(userForm, getBasketList(), basket.getSum(), true);
         } catch (MessagingException e) {
             e.printStackTrace();
         }

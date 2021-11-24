@@ -5,7 +5,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import pl.jacekplotnicki.PizzaCentre.models.UserForm;
 import pl.jacekplotnicki.PizzaCentre.services.Basket;
 import pl.jacekplotnicki.PizzaCentre.services.PizzaService;
 
@@ -32,7 +35,6 @@ public class BasketController {
     @GetMapping("/success") //@GetMapping connects url link with html
     public String makeOrder(){
         basket.clearBasket();
-        pizzaService.sendMailOrder();
         return "success";
     }
 
@@ -46,5 +48,18 @@ public class BasketController {
     public String addPizzaFromBasket(@PathVariable int id){
         pizzaService.addPizzaFromBasket(id);
         return "redirect:/basket";
+    }
+
+    @GetMapping("/userForm")
+    public String getUserForm(Model model) {
+        model.addAttribute("userForm", new UserForm());
+        return "userForm";
+    }
+
+    @PostMapping("/postForm")
+    public String postUserForm(@ModelAttribute UserForm userForm) {
+        log.info("{}", userForm);
+        pizzaService.sendMailOrder(userForm);
+        return "redirect:/success";
     }
 }
