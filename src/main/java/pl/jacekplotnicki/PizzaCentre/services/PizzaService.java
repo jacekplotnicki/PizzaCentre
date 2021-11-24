@@ -6,6 +6,7 @@ import pl.jacekplotnicki.PizzaCentre.models.Pizza;
 import pl.jacekplotnicki.PizzaCentre.models.PizzaInBasket;
 import pl.jacekplotnicki.PizzaCentre.models.PizzaRepository;
 
+import javax.mail.MessagingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,7 @@ import java.util.List;
 public class PizzaService {
     private final Basket basket;
     private final PizzaRepository pizzaRepository;
+    private final MailSerivce mailSerivce;
 
     public Pizza getPizzaById(int id) {
         List<Pizza> productList = pizzaRepository.getAll();
@@ -61,9 +63,21 @@ public class PizzaService {
         return pizzaInBasketList;
     }
 
-    public void remove1PizzaFromBasket(int id){
+    public void removePizzaFromBasket(int id){
         basket.getBasketList().remove(getPizzaById(id));
         basket.setSum(basket.getSum().subtract(getPizzaById(id).getPrice()));
     }
 
+    public void addPizzaFromBasket(int id){
+        basket.getBasketList().add(getPizzaById(id));
+        basket.setSum(basket.getSum().add(getPizzaById(id).getPrice()));
+    }
+
+    public void sendMailOrder(){
+        try {
+            mailSerivce.sendMail("wjackowski10@gmail.com", null, null, true);
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+    }
 }

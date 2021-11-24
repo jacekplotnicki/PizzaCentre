@@ -34,11 +34,15 @@
             </div>
             <div class="col-8">
                 <div class="card-header" th:text="${pizza.name}"></div>
-                <div th:text="'quantity: '+${pizza.quantity}"></div>
+                    <form class="basket-row" th:action="'/basket/remove/' + ${pizza.id}">
+                        <button class="btn btn-warning btn-sm">-</button>
+                    </form>
+                    <div class="basket-row basket-quantity" th:text="'quantity: '+${pizza.quantity}"></div>
+
+                    <form class="basket-row" th:action="'/basket/add/' + ${pizza.id}">
+                        <button class="btn btn-success btn-sm">+</button>
+                    </form>
                 <div class="custom-price" th:text="${pizza.price}+' PLN'"></div>
-                <form th:action="'/basket/remove/' + ${pizza.id}">
-                    <button class="btn btn-warning btn-sm">remove</button>
-                </form>
             </div>
         </div>
     </div>

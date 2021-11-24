@@ -39,3 +39,12 @@ margin-right: auto;
 align-items: center;
 text-align: center;
 }
+
+.basket-row{
+display: inline-block;
+
+}
+
+.basket-quantity{
+margin: 5px 10px;
+}

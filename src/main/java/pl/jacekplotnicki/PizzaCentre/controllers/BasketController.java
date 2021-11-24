@@ -32,12 +32,19 @@ public class BasketController {
     @GetMapping("/success") //@GetMapping connects url link with html
     public String makeOrder(){
         basket.clearBasket();
+        pizzaService.sendMailOrder();
         return "success";
     }
 
     @GetMapping("/basket/remove/{id}")
-    public String remove1PizzaFromBasket(@PathVariable int id){
-        pizzaService.remove1PizzaFromBasket(id);
+    public String removePizzaFromBasket(@PathVariable int id){
+        pizzaService.removePizzaFromBasket(id);
+        return "redirect:/basket";
+    }
+
+    @GetMapping("/basket/add/{id}")
+    public String addPizzaFromBasket(@PathVariable int id){
+        pizzaService.addPizzaFromBasket(id);
         return "redirect:/basket";
     }
 }
